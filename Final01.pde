@@ -21,7 +21,7 @@ float br, bg, bb;
 float fps;
 
 void setup(){
-  fullScreen();
+  size(800, 800);
   noCursor();
   //Set background rgb
   br = 255;
@@ -40,7 +40,7 @@ void setup(){
   minim = new Minim(this);
   
   //Change track name for different audio input
-  title = "Castle on the Hill";
+  title = "Ready For It";
   extension = ".mp3";
   track = title + extension;
   
