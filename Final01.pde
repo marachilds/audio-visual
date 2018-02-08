@@ -18,6 +18,7 @@ String title, extension, track;
 String fileName;
 float r, g, b;
 float br, bg, bb;
+float fps;
 
 void setup(){
   fullScreen();
@@ -32,7 +33,9 @@ void setup(){
   x = 5;
   y = 5;
   
-  frameRate(60);
+  //Change frame rate to change output
+  fps = 120;
+  frameRate(fps);
   
   minim = new Minim(this);
   
@@ -63,9 +66,9 @@ void draw(){
         }
         
         //RGB color with alpha mapped to fft band
-        r = 0;
-        g = 102;
-        b = 255;
+        r = 255;
+        g = 67;
+        b = 0;
         
         fill(r, g, b, alpha);
         noStroke();
@@ -86,7 +89,7 @@ void draw(){
     
   //Save jpeg and stop looping when track is finished playing
   if(song.isPlaying() == false){
-    fileName = title + ".jpeg";
+    fileName = title + "AT" + fps + "fps.jpeg";
     save(fileName);
     noLoop();
   }
