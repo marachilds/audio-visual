@@ -89,7 +89,7 @@ void draw(){
     
   //Save jpeg and stop looping when track is finished playing
   if(song.isPlaying() == false){
-    fileName = title + "AT" + fps + "fps.jpeg";
+    fileName = title + "-" + fps + "fps.jpeg";
     save(fileName);
     noLoop();
   }
